@@ -44,7 +44,7 @@ public class Controller {
         return fixture;
     }
 
-    public String crearEquipo(String nombre) {
+    public Equipo crearEquipo(String nombre) {
         Equipo equipo = new Equipo(nombre);
         return equipo;
     }
@@ -87,7 +87,7 @@ public class Controller {
     }
 
     public void informacionPorDefecto() {
-        Equipo equipo = crearEquipo("Equipo 1");
+        Equipo equipo1 = crearEquipo("Equipo 1");
         asignarEquipo(equipo1);
         crearJugador(equipo1, "Jugador 1", 23, Posicion.PORTERO);
         crearJugador(equipo1, "Jugador 2", 26, Posicion.DEFENSA);
@@ -107,12 +107,12 @@ public class Controller {
     }
 
     public String ejecutarPartido() {
-        mensaje = "";
+        String mensaje = "";
         Equipo equipo = equipos[0];
         Random index = new Random();
         int jugador1;
         int jugador2;
-        int jugador3;
+        int jugador3 =0;
 
         for(int i = 0; i < 5; i++) {
 
@@ -122,14 +122,14 @@ public class Controller {
                 jugador3 = index.nextInt(6);
             } while (jugador1 == jugador2);
 
-            mensaje = mensaje + equipo[0].getJugadores()[jugador1].getNombre() + equipo[0].getJugadores()[jugador1].getNombre().paseDelDisco() + equipo[0].getJugadores()[jugador2].getNombre()+"\n";
+            mensaje = mensaje + equipos[0].getJugadores()[jugador1].getNombre() + equipos[0].getJugadores()[jugador1].getNombre() + equipos[0].getJugadores()[jugador1].paseDelDisco() + equipos[0].getJugadores()[jugador2].getNombre()+"\n";
 
             mensaje = mensaje + arbitros[0].desplazarse()+"\n";
 
             jugador3 = jugador2;
         }
 
-        mensaje = mensaje + equipo[0].getJugadores()[jugador3].getNombre() + equipo[0].getJugadores()[jugador3].jugadorHaceGol();
+        mensaje = mensaje + equipos[0].getJugadores()[jugador3].getNombre() + equipos[0].getJugadores()[jugador3].jugadorHaceGol();
 
         return mensaje;
     }

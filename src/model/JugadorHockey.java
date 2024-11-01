@@ -28,7 +28,7 @@ public class JugadorHockey extends Persona implements IDesplazarseEnPistaConPalo
     }
 
     public String paseDelDisco() {
-        return "Que buen pase del disco, se lo pasa a: "
+        return "Que buen pase del disco, se lo pasa a: ";
     }
 
     public String jugadorHaceGol() {

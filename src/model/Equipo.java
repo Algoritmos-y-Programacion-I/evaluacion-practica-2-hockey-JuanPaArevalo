@@ -8,7 +8,7 @@ public class Equipo {
 
     private JugadorHockey[] jugadores = new JugadorHockey[CANTIDAD_JUGADORES];
 
-    public Equipo() {
+    public Equipo(String nombre) {
         jugadores = new JugadorHockey[CANTIDAD_JUGADORES];
         this.nombreEquipo = nombre;
     }
@@ -25,7 +25,7 @@ public class Equipo {
     }
 
     public JugadorHockey crearJugador(String nombre, int edad, Posicion posicion) {
-        JugadorHockey jugador = new JugadorHockey(jugador, edad, posicion);
+        JugadorHockey jugador = new JugadorHockey(nombre, edad, posicion);
         return jugador;
     }
 
