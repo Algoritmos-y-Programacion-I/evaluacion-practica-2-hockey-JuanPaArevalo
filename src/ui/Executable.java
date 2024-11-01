@@ -17,7 +17,7 @@ public class Executable {
      * @post Se crea una instancia de Executable y se inicializan el lector de
      *       entrada y el controlador.
      */
-    public Executable() {
+    Executable() {
         escaner = new Scanner(System.in);
         controladora = new Controller();
     }
@@ -47,13 +47,13 @@ public class Executable {
 
 			switch (option) {
 					case 1:
-
+                        iniciarFixture();
 						break;
 					case 2:
-
+                        informacionPorDefecto();
 						break;
 					case 3:
-
+                        iniciarPartido();
 						break;
 					case 4:
 						flag = true;
@@ -66,6 +66,25 @@ public class Executable {
 
 		}
 
+    }
+
+    public void iniciarFixture() {
+        System.out.println(controladora.fixture());
+    }
+
+    public void informacionPorDefecto() {
+        controladora.informacionPorDefecto();
+    }
+
+    public void iniciarPartido() {
+        System.out.println(controladora.ejecutarPartido());
+    } 
+
+   public void registrarEquipo() {
+        System.out.println("Por favor, ingrese el nombre del equipo que desea registrarse: ");
+        String nombre = escaner.nextLine();
+
+        controladora.asignarEquipo(controladora.crearEquipo(nombre));
     }
 
     /**
