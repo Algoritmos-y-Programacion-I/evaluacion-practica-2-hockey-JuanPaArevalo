@@ -15,9 +15,9 @@ public class Equipo {
 
     public boolean agregarJugador(JugadorHockey jugador) {
 
-        for(int = 0; i < jugadores.length; i++) {
+        for(int i = 0; i < jugadores.length; i++) {
             if(jugadores[i] == null) {
-                jugadores [i = jugador;]
+                jugadores [i] = jugador;
                 return true;
             }
         }
